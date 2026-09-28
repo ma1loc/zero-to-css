@@ -1,0 +1,48 @@
+
+:root {
+	--whiteColor: #ffffff;
+	--broderColor: #6b7280;
+	--backgroundColor: #0f172a;
+	--ggredkColor: #991b1b;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+
+	box-sizing: border-box;
+	/*	Box-sizing
+		> box-sizing: border-box;
+			- width: 600px, padding: 20px, border: 5px
+			>> actual rendered size = still 600×600 (content area shrinks to ~550px to make room)
+		> box-sizing: content-box(default);
+			- width: 600px, padding: 20px, border: 5px
+			>> actual rendered size = 600 + 40 (padding both sides) + 10 (border both sides) = 650×650
+	*/
+}
+
+body {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	width: 100vw;
+	height: 100vh;
+
+	background-color: var(--backgroundColor);
+}
+
+.container {
+	gap: 2px;
+	padding: 10px;
+	border: 10px solid var(--broderColor);
+	color: var(--whiteColor);
+	background-color: var(--whiteColor);
+}
+
+.items img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
