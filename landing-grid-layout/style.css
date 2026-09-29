@@ -1,0 +1,73 @@
+:root {
+	--logoColor: #16a34a;
+	--aboutColor: #b91c1c;
+	--contentColor: #0369a1;
+	--sidebarColor: #374151;
+	--footerColor: #a21caf;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	list-style: none;
+}
+
+body {
+	color: white;
+}
+
+.page {
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+	
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 50px 1fr 70px;
+}
+
+.logo {
+	grid-column: 1 / 3;
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+	background-color: var(--logoColor);
+}
+
+.nav {
+	grid-column: 3 / -1;
+	background-color: var(--aboutColor);
+}
+
+.nav ul {
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+	height: 100%;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	grid-column: 1 / 10;
+	background-color: var(--contentColor);
+}
+
+.sidebar {
+	grid-column: 10 / -1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--sidebarColor);
+}
+
+.footer {
+	grid-column: 1 / -1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--footerColor);
+}
