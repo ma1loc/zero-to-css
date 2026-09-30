@@ -1,0 +1,139 @@
+:root {
+	/* 50px */
+	--header-min-height-: 3.125rem;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+body {
+	min-height: 100vh;
+}
+
+a {
+	/* 16px */
+	font-size: 1rem;
+	color: black;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto 0 auto;
+	padding: 0 20px 0 20px;
+	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.nav-container {
+	width: 100%;
+	max-width: 1024px;
+	min-height: var(--header-min-height-);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+	gap: 15px;
+}
+
+.auth {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.auth .btn {
+	color: white;
+	border-radius: 9999px;
+	padding: 5px 10px 5px 10px;
+	background-color: #000000;
+}
+
+section {
+	display: grid;
+	grid-template-rows: repeat(5, 1fr);
+	grid-template-columns: repeat(5, 1fr);
+}
+
+section p {
+	display: flex;
+	grid-area: 3 / 3 / 4 / 4;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+.sidebar-btn {
+	display: none;
+}
+
+.sidebar-btn img {
+	/* 24/24Pixel / 16 = 1.5rem */
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+
+/* mobile */
+.sidebar-menu {
+	display: none;
+	position: fixed;
+	flex-wrap: wrap;
+	/* 20px */
+	padding: 1.25rem;
+	/* 50px */
+	row-gap: 3.125rem;
+	right: 0;
+	top: var(--header-min-height-);
+	bottom: 0;
+	flex-direction: column;
+	/*
+		min-value = 200px -> 12.5rem
+		max-value = 300px -> 18.75
+	*/
+	width: clamp(6.25rem, 50vw, 18.75rem);
+	background-color: rgb(251, 255, 124);
+}
+
+
+.mobile-nav ul {
+	display: flex;
+	flex-direction: column;
+}
+
+.sidebar-menu .auth {
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+/* display query with 640px */
+@media (width <=640px) {
+	.desktop-nav {
+		display: none;
+	}
+
+	.nav-auth {
+		display: none;
+	}
+
+	.sidebar-btn {
+		display: flex;
+	}
+
+	.sidebar-menu {
+		display: flex;
+	}
+}
